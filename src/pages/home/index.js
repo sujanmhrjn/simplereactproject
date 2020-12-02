@@ -7,28 +7,25 @@ class HomePage extends Component{
             number:2,
             fullname:"",
             email:"",
-            errors:{}
+            errors:{},
+            
      
         }
         // this.incrementNumber=this.incrementNumber.bind(this);
     }
-    incrementNumber=()=> {
+    // incrementNumber=()=> {
        
-        this.setState(state=>({
-            number: ++state.number
-        }));
-    }
-    decrementNumber=()=> {
+    //     this.setState(state=>({
+    //         number: ++state.number
+    //     }));
+    // }
+    // decrementNumber=()=> {
    
-        this.setState(state=>({
-            number: --state.number
-        }));
-    }
-    handleInputChange=(e)=>{
-        this.setState({
-            number: e.target.value
-        })
-    }
+    //     this.setState(state=>({
+    //         number: --state.number
+    //     }));
+    // }
+  
 
     handleInputChange= (e) =>{
      this.setState({
@@ -37,9 +34,10 @@ class HomePage extends Component{
     }
     handleFormValidation = () => {
         let formError = {};
-        if(!this.state.fullname) formError.fullname="Enter Fullname";
+        const emailRegex = /^[A-Za-z0-9\.\-\_]+[\@]{1}[A-Za-z]+[\.]{1}[a-z]{2,}$/;
+        if(this.state.fullname === "") formError.fullname="Enter Fullname";
         if(!this.state.email) formError.email="Enter email";
-        
+        if(!emailRegex.test(this.state.email)) formError.email="Invalid Email Address";
         return formError;
     
     }
@@ -49,38 +47,39 @@ class HomePage extends Component{
         this.setState({
             errors
         })
-        // alert("submitted");
-     
+        if(Object.keys(errors).length){
+            
+        }else{
+            alert("You are good to go")
+        }
+
+        // Object.keys(errors).length?"there's an error":alert("You are good to go")
+        
     }
 
     
 
    render(){
+       const {errors} = this.state;
+       const emailError = `forminput ${errors && errors.email?'error':''}`  ;
+     
        return (
             <div>
-                <h1>Increment/Decrement Value</h1>
-                <div>
-                    <button onClick={this.decrementNumber}>-</button>
-                    <input type="text" value={this.state.number} onChange={this.handleInputChange}/>
-                    <button onClick={this.incrementNumber}>+</button>
-                </div>
-                <h5>{this.state.number}</h5>
-
                 <form onSubmit={this.handleSubmit}>
-                    <div>
+                    <div className="form-group">
                         <label>Full Name</label>
-                        <br/>
-                        <input type="text" name="fullname" onChange={this.handleInputChange}/>
+                       
+                        <input type="text" name="fullname" onChange={this.handleInputChange} className={`forminput ${errors && errors.fullname?'error':''}`}/>
+                        {errors?.fullname && <p>{errors.fullname}</p>}
                     </div>
-                    <div>
-                        <label>Email Address</label>
-                        <br/>
-                        <input type="text" name="email" onChange={this.handleInputChange}/>
+                    <div className="form-group">
+                        <label>Email</label>
+                       
+                        <input type="text" name="email" onChange={this.handleInputChange} className={emailError}/>
+                        {errors && errors.email && <p>{errors.email}</p>}
                     </div>
-                  
                     <button type="submit">Submit</button>
                 </form>
-
             </div>
         );
    }
