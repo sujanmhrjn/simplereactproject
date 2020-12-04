@@ -1,10 +1,12 @@
 import React from 'react';
 
-import HomePage from './pages/home';
+
+import ReactLoop from './pages/loop';
 function App() {
   return (
     <div className="App">
-      <HomePage/>
+    
+      <ReactLoop/>
     </div>
   );
 }
