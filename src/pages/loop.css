@@ -1,0 +1,12 @@
+svg * {
+  fill: rgb(0, 4, 255);
+}
+
+.home-icon svg #shape-2 {
+  fill: #000;
+  stroke: #f00;
+}
+
+.home-icon svg:hover #shape-3 {
+  fill: #f00;
+}

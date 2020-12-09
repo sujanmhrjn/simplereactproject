@@ -1,5 +1,9 @@
 import React from 'react';
-
+import Background2 from '../assets/images/background-2.jpg';
+import MenuIcon from '../assets/images/icon-menu.svg';
+import {ReactComponent as MenuSvgIcon} from '../assets/images/icon-menu.svg';
+import {ReactComponent as HomeIcon} from '../assets/images/icon-home.svg';
+import './loop.css';
 class ReactLoop extends React.Component{
     constructor(props){
         super(props);
@@ -129,6 +133,15 @@ class ReactLoop extends React.Component{
                     }            
                     </tbody>
                 </table>
+                <img src="/background-1.jpg" alt=""/>
+                <img src={Background2}/>
+                <img src={Background2}/>
+                <img src={MenuIcon}/>
+                <MenuSvgIcon/>
+                <br/>
+                <div className="home-icon">
+                <HomeIcon/>
+                </div>
             </div>
         )
     }

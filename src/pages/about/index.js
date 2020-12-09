@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 
-class HomePage extends Component{
+class AboutPage extends Component{
     constructor(props){
         super(props);
        
@@ -14,10 +14,9 @@ class HomePage extends Component{
      
        return (
             <div>
-               <h1>Home</h1>
+               <h1>About Page</h1>
             </div>
         );
    }
 }
-export default HomePage;
-
+export default AboutPage;

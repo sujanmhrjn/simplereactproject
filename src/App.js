@@ -1,12 +1,28 @@
 import React from 'react';
+import {BrowserRouter, Link, NavLink, Route, Switch} from 'react-router-dom';
+import AboutPage from './pages/about';
+import ContactPage from './pages/contact';
+import HomePage from './pages/home';
+
+import './app.css'
 
 
-import ReactLoop from './pages/loop';
 function App() {
   return (
     <div className="App">
-    
-      <ReactLoop/>
+      <BrowserRouter>
+          <NavLink exact to="/">Home</NavLink> | 
+          <NavLink to="/about">About</NavLink> | 
+          <NavLink to="/contact">Contact</NavLink>
+
+          <Switch>
+            <Route exact path="/" component={HomePage}/>
+            <Route path="/about" component={AboutPage}/>
+            <Route path="/contact" component={ContactPage}/>
+          </Switch>
+
+          
+      </BrowserRouter>
     </div>
   );
 }
