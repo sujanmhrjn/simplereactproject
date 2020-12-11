@@ -1,0 +1,16 @@
+.c-navigation {
+  .nav-list {
+    display: flex;
+    li {
+      a {
+        display: block;
+        padding: 0 15px;
+        color: #333;
+
+        &.active {
+          color: #f00;
+        }
+      }
+    }
+  }
+}
