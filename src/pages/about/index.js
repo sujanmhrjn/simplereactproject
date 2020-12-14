@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-
+import MainLayout from '../../Layouts/mainLayout';
 class AboutPage extends Component{
 
     
@@ -8,9 +8,11 @@ class AboutPage extends Component{
 
      
        return (
-            <div>
-               <h1>About Page</h1>
-            </div>
+            <MainLayout>
+              
+
+               <h1>AboutPage</h1>
+            </MainLayout>
         );
    }
 }

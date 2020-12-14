@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-
+import {CgMenuRightAlt} from "react-icons/cg";
 const links = [
     {
         name:"Home",
@@ -19,15 +19,42 @@ const links = [
         url:"/movies"
     }
 ]
-const ReactNavigation = () => {
-    return(
-       <div className="c-navigation">
-           <ul className="nav-list">
-                {links.map((link,ind)=>(
-                    <li key={ind}><NavLink to={link.url}>{link.name}</NavLink></li>
-                ))}
-           </ul>
-       </div> 
-    )
+class ReactNavigation extends Component {
+    constructor(props){
+        super(props);
+
+        this.state={
+            isMenuActive:false
+        }
+    }
+
+    handleMenuBarClick = () =>{
+        this.setState(state => ({
+            isMenuActive:!state.isMenuActive
+        }), ()=>{
+            if(this.state.isMenuActive){
+                document.body.style.overflow="hidden"
+            }else{
+                document.body.style.overflow="auto"
+            }
+        });
+    }
+    
+    render(){
+        const {isMenuActive} = this.state;
+        return(
+        <div className="c-navigation">
+            <div className="nav-toggler" onClick={this.handleMenuBarClick}>
+                    <CgMenuRightAlt/>
+            </div>
+            <ul className={`nav-list ${ isMenuActive?'active':''}`}>
+                    {links.map((link,ind)=>(
+                        <li key={ind}><NavLink exact to={link.url}>{link.name}</NavLink></li>
+                    ))}
+            </ul>
+            {isMenuActive && <div className="nav-overlay" onClick={this.handleMenuBarClick}></div> }
+        </div> 
+        )
+   }
 }
 export default ReactNavigation;
