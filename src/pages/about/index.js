@@ -10,8 +10,9 @@ class AboutPage extends Component{
        return (
             <MainLayout>
               
-
-               <h1>AboutPage</h1>
+               <div>
+                  <h1>AboutPage</h1>
+               </div>
             </MainLayout>
         );
    }
