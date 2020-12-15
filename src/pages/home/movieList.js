@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {Container, Row, Col} from 'reactstrap';
-import MoviePoster from '../../assets/images/movie-banner.png';
 import MovieCard from '../../components/MovieCard';
 
 import MovieData from '../../utils/movie.json';
