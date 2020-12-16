@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactHeader from '../components/Header';
+import ReactFooter from '../components/Footer';
 
 
 const MainLayout = (props) => {
@@ -8,7 +9,8 @@ const MainLayout = (props) => {
             <ReactHeader/>
             {props.children}
             <br/>
-            <p>&copy; Copyright 2020. All Rights Reserved</p>
+            <ReactFooter/>
+            
         </div>
     )
 }

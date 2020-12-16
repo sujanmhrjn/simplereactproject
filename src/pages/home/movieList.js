@@ -22,7 +22,7 @@ class MoviesList extends React.Component{
                         {movies.slice(0,12).map((movie, i)=>{
                             return(
                                 <Col sm={6} md={4} lg={3} key={i}>
-                                    <MovieCard url="/" title={movie.title} poster={movie.posterurl}/>
+                                    <MovieCard url={`/movie/${movie.id}`} title={movie.title} poster={movie.posterurl}/>
                                 </Col>
                             )
                         })}
