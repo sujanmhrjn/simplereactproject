@@ -1,0 +1,22 @@
+.page-movies {
+  padding: 60px 0;
+  .form-inline {
+    display: flex;
+    flex-flow: nowrap;
+    margin-bottom: 45px;
+    .form-group {
+      width: calc(100% - 140px);
+      input {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        width: 100%;
+      }
+    }
+    .btn {
+      flex: 0 0 140px;
+      max-width: 140px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}

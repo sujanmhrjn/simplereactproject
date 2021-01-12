@@ -41,7 +41,7 @@ class MovieDetail extends React.Component{
                             </Col>
                             <Col lg="8">
                                 <div className="text">
-                                    <Link to="/" className="c-breadcrumb"><FaChevronLeft/> All Movies</Link>
+                                    <Link to="/movies" className="c-breadcrumb"><FaChevronLeft/> All Movies</Link>
                                     <h2>{selectedMovie.title}</h2>
                                     <div className="d-flex">
                                         <div className="release-date">
