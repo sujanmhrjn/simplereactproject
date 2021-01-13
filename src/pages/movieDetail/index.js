@@ -27,7 +27,6 @@ class MovieDetail extends React.Component{
 
     render(){
         const {selectedMovie} = this.state;
-       console.log(selectedMovie);
         return(
             <MainLayout>
            {selectedMovie && <div className="page-movie-detail pt-4">

@@ -6,8 +6,9 @@ import AboutPage from './pages/about';
 import ContactPage from './pages/contact';
 import HomePage from './pages/home';
 import MovieDetail from './pages/movieDetail';
-import Movies from './pages/movie';
+
 import ErrorPage from './pages/404';
+import Movies from './pages/movies';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           <Route exact path="/about" component={AboutPage}></Route>
           <Route exact path="/contact" component={ContactPage}></Route>
           <Route exact path="/movie/:id" component={MovieDetail}></Route>
-          <Route exact path="/movies" component = {Movies}></Route>
+          <Route exact path="/movies" component={Movies}></Route>
           <Route path="*" component={ErrorPage}></Route>
         </Switch>
       </BrowserRouter>
