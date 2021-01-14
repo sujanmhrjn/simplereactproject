@@ -1,19 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {Container, Row, Col} from 'reactstrap';
 import MovieCard from '../../components/MovieCard';
 
 import MovieData from '../../utils/movie.json';
 
-class MoviesList extends React.Component{
-    constructor(props){
-        super(props);
-        this.state= {
-            movies: MovieData
-        }
-    }
-    render(){
-        const {movies} = this.state;
+
+const MoviesList=()=>{
+        const [movies, setMovies] = useState(MovieData);
         return(
             <section className=" c-section c-movies-list">
                 <Container>
@@ -31,6 +25,5 @@ class MoviesList extends React.Component{
                 </Container>
             </section>
         );
-    }
 }
 export default MoviesList

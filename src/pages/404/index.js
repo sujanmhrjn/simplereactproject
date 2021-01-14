@@ -3,6 +3,7 @@ import { CgArrowLeft } from 'react-icons/cg';
 import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
+
     return(
         <div className="page-error">
                 <div className="content">
